@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
+import '@/components/main.scss';
 class App extends Component {
   constructor (props) {
     super(props);
-    // this.btnClickFun = this.btnClickFn.bind(this)
+    this.state = {
+      list: []
+    }
   }
-  btnClickFn () {
-    console.log(this)
+  componentDidMount () {
+    axios.get('http://www.daxunxun.com/douban')
+      .then(res => {
+        
+        console.log(this.props)
+        this.setState({
+          list: res.data
+        })
+      })
   }
-
   render () {
     return (
-      <div>
-        <button onClick = { this.btnClickFn.bind(this) }>点击这里</button>
-      </div>
+      <ul className="list">
+        {
+          this.state.list.map(item => {
+            return (<li key = { item.id }>
+              { item.title }
+            </li>)
+          })
+        }
+      </ul>
     )
   }
+  
 }
 
 export default App
