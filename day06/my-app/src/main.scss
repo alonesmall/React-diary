@@ -1,0 +1,71 @@
+@import '@/lib/reset.scss';
+
+html, body, #root, .container {
+  @include rect (100%, 100%);
+}
+
+.container {
+  @include flexbox();
+  @include flex-direction(column);
+  .box {
+    @include flex();
+    @include rect(100%, auto);
+    @include flexbox();
+    @include flex-direction(column);
+    .header {
+      @include rect(100%, .44rem);
+      background: #f66;
+    }
+    .content {
+      @include flex();
+      @include rect(100%, auto);
+    }
+  }
+  .footer {
+    @include rect(100%, .5rem);
+    @include background-color(#efefef);
+    ul {
+      @include rect (100%, 100%);
+      @include flexbox();
+      li {
+        overflow: hidden;
+        @include flex();
+        @include flexbox();
+        a {
+          @include flex();
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content();
+          @include align-items();
+          position: relative;
+          &.active {
+            color: #f66;
+            span {
+              color: #f66;
+            }
+            p {
+              color: #f66;
+            }
+          }
+          span {
+            color: #000;
+          }
+          p {
+            color: #333;
+          }
+          .icon-gouwuche1 {
+            position: absolute;
+            font-size: .22rem;
+            width: .16rem;
+            height: .24rem;
+            top: 0;
+            left: .27rem;
+          }
+          .p-gouwuche1 {
+            margin-top: .25rem;
+          }
+        }
+      }
+    }
+  }
+}
