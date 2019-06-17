@@ -8,7 +8,6 @@ class Detail extends React.Component {
     }
   }
   componentDidMount () {
-    console.log(this.props);
     const { id } = this.props.match.params
     axios.get('http://www.daxunxun.com/detail?id=' + id)
       .then(res => {
