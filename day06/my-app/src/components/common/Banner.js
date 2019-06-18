@@ -4,7 +4,7 @@ import axios from 'axios';
 class App extends React.Component {
   state = {
     imgHeight: 176,
-    bannerList: []
+    bannerList: ['1','2']
   }
   componentDidMount() {
     axios.get('http://www.daxunxun.com/banner')
