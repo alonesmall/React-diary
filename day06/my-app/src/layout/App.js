@@ -4,6 +4,7 @@ import Home from '@/views/Home';
 import Kind from '@/views/Kind';
 import Cart from '@/views/Cart';
 import User from '@/views/User';
+import Test from '@/views/test'
 import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path = '/kind' component = { Kind }/>
         <Route path = '/cart' component = { Cart }></Route>
         <Route path = '/user' component = { User }></Route>
+        <Route path = "/test" component = { Test }></Route>
         <Redirect to = '/home'></Redirect>
       </Switch>
       <footer className="footer">

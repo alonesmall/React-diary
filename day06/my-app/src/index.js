@@ -5,20 +5,20 @@ import App from './layout/App';
 import DetailApp from './layout/DetailApp';
 import * as serviceWorker from './serviceWorker';
 import store from '@/store';
-function renderFn () {
+import { Provider } from 'react-redux';
 
   ReactDOM.render(
-    <BrowserRouter>
-      <Switch>
-        <Route path = '/detail' component = { DetailApp }></Route>
-        <Route path = '/' component = { App }></Route>
-      </Switch>
-    </BrowserRouter>,
+    <Provider store = { store }>
+      <BrowserRouter>
+        <Switch>
+          <Route path = '/detail' component = { DetailApp }></Route>
+          <Route path = '/' component = { App }></Route>
+        </Switch>
+      </BrowserRouter>
+    </Provider>,
     document.getElementById('root')
   );
-}
-renderFn ();
-store.subscribe(renderFn);
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
